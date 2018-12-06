@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for post in posts %}
+<div style="margin:10px">
+    <a href="{% url 'details' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
+    <h4>{{ post.description }}</h4>
+    {% if post.extension == 'img' %}
+    <img src="media/{{ post.media }}" style="width:250px;height:250px">
+    {% elif post.extension == 'video' %}
+    <video width="250" height="250" controls>
+        <source src="media/{{ post.media }}" type="video/mp4">
+    </video>
+    {% else %}
+    <span>{{ post.media }} | {{ post.extension }}</span>
+    {% endif %}
+    <h5>{{ post.created_date }}</h5>
+</div>
+{% if forloop.last %}
+{% else %}
+<hr>
+{% endif %}
+{% endfor %}
+{% endblock %}

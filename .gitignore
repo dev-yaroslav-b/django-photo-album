@@ -1,0 +1,8 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# Local Data
+migrations/
+files/
+db.sqlite3
