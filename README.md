@@ -13,14 +13,25 @@ Clone repo:
 git clone https://github.com/dev-yaroslav-b/Django-PhotoAlbum.git
 ```
 Create virtual env:
-    cd Django-PhotoAlbum
-    virtualenv --python=python3.6 venv
+```
+cd Django-PhotoAlbum
+virtualenv --python=python3.6 venv
+```
 Activate venv:
-  source venv/bin/activate
+```
+source venv/bin/activate
+```
 Install requirements:
-  pip install -r requirements.txt 
+```
+pip install -r requirements.txt 
+```
 Make migrations:
+```
   ./manage.py makemigrations
   ./manage.py migrate
+```
 Start server:
+```
   ./manage.py runserver
+```
+And that is it!
