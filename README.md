@@ -1,4 +1,4 @@
-# Photo app created using Django
+# Photo album app created using Django
 It allows you:
 1. Create post with media files(Images, Videos)
 2. Edit or Delete your posts
