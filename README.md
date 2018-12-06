@@ -9,10 +9,10 @@ http://devyab.pythonanywhere.com/
 
 ## Installation
 Clone repo:
-  git clone https://github.com/dev-yaroslav-b/Django-PhotoAlbum.git
+    git clone https://github.com/dev-yaroslav-b/Django-PhotoAlbum.git
 Create virtual env:
-  cd Django-PhotoAlbum
-  virtualenv --python=python3.6 venv
+    cd Django-PhotoAlbum
+    virtualenv --python=python3.6 venv
 Activate venv:
   source venv/bin/activate
 Install requirements:
