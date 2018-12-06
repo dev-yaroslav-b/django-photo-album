@@ -24,7 +24,7 @@ SECRET_KEY = '3=a$eu$zibde6lt3$=tvn9wv$gv#sj-ua2z=mt6otu8)awkr@n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['devyab.pythonanywhere.com']
 
 # Application definition
 
