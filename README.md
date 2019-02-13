@@ -4,8 +4,6 @@ It allows you:
 2. Edit or Delete your posts
 3. Share YouTube videos via link
 
-You can try it!
-http://devyab.pythonanywhere.com/
 
 ## Installation
 Clone repo:
