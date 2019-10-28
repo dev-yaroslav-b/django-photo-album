@@ -8,11 +8,11 @@ It allows you:
 ## Installation
 Clone repo:
 ```
-git clone https://github.com/dev-yaroslav-b/Django-PhotoAlbum.git
+git clone https://github.com/dev-yaroslav-b/django-photo-album.git
 ```
 Create virtual env:
 ```
-cd Django-PhotoAlbum
+cd django-photo-album
 virtualenv --python=python3.6 venv
 ```
 Activate venv:
