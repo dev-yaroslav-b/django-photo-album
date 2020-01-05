@@ -1,27 +1,27 @@
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.views import generic
 
 from .models import MediaPost
 from .forms import MediaPostForm, ShareYoutubeVideoForm
 from .get_video import get_video
 
 
-def index(request):
-    posts = MediaPost.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
-    context = {
-        'posts': posts
-    }
-    return render(request, 'album/index.html', context)
+class IndexView(generic.ListView):
+    context_object_name = 'posts'
+    template_name = 'album/index.html'
+
+    def get_queryset(self):
+        """Return all published posts ordered by creation date."""
+        return MediaPost.objects.order_by('-created_date')
 
 
-@login_required
-def details(request, pk):
-    post = get_object_or_404(MediaPost, pk=pk)
-    context = {
-        "post": post
-    }
-    return render(request, "album/details.html", context)
+class DetailView(LoginRequiredMixin, generic.DetailView):
+    model = MediaPost
+    context_object_name = 'post'
+    template_name = "album/details.html"
 
 
 @login_required
@@ -70,7 +70,8 @@ def share_video(request):
     if request.method == "POST":
         form = ShareYoutubeVideoForm(request.POST)
         if form.is_valid():
-            title, description, media = get_video(form.cleaned_data['link'], request.user.id)
+            title, description, media = get_video(
+                form.cleaned_data['link'], request.user.id)
             post = MediaPost(user=request.user,
                              title=title,
                              description=description,
