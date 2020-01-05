@@ -4,7 +4,7 @@
 {% for post in posts %}
 <div style="margin:10px">
     <a href="{% url 'details' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
-    <h4>{{ post.description }}</h4>
+    <h4>{{ post.description|truncatechars:80 }}</h4>
     {% if post.extension == 'img' %}
     <img src="media/{{ post.media }}" style="width:250px;height:250px">
     {% elif post.extension == 'video' %}
