@@ -1,3 +1,6 @@
+.vscode/
+venv/
+
 # Byte-compiled
 __pycache__/
 *.py[cod]
