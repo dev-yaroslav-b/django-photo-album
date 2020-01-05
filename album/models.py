@@ -17,7 +17,7 @@ class MediaPost(models.Model):
 
     def extension(self):
         name, extension = os.path.splitext(self.media.name)
-        if extension in ['.jpg', '.png']:
+        if extension in ['.jpg', '.jpeg','.png']:
             return 'img'
         elif extension in ['.mp4', '.mkv']:
             return 'video'
