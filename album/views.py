@@ -70,7 +70,6 @@ def share_video(request):
     if request.method == "POST":
         form = ShareYoutubeVideoForm(request.POST)
         if form.is_valid():
-            get_video(form.cleaned_data['link'], request.user.id)
             title, description, media = get_video(form.cleaned_data['link'], request.user.id)
             post = MediaPost(user=request.user,
                              title=title,
