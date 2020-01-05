@@ -2,7 +2,7 @@
 
 {% block content %}
 <div style="margin:10px">
-    <a href="{% url 'details' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
+    <h3>{{ post.title }}</h3>
     <h4>{{ post.description }}</h4>
     {% if post.extension == 'img' %}
     <img src="/media/{{ post.media }}" style="width:250px;height:250px">
